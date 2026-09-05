@@ -1,0 +1,44 @@
+-- create database titanic_db;
+-- use titanic_db;
+-- show databases;
+-- show tables;
+-- select count(*) as total_passengers from train;
+-- select* from train limit 10;
+-- describe train;
+-- select * from train;
+-- select PassengerId , Name , Age, Sex from train;
+-- select * from train where sex ="female";
+-- select * from train where sex = "male";
+-- select * from train where age > 20;
+-- select * from train where age >= 50;
+-- select * from train where age <= 30;
+-- select * from train where survived = 1;
+-- select * from train where survived = 0;
+-- 1= first class
+-- 2= second class
+-- 3= third class
+-- select * from train where pclass= 1;
+-- select * from train where pclass = 2;
+-- select * from train where pclass = 3;
+-- select passengerid, name, age  from train where age>50;-- 
+-- select count(*) as survivors from train where survived =1;
+-- select count(*) as survivors from train where survived =0;
+-- select count(*) as deaths from train where survived = 0;
+-- select count(*) as survivors from train where survived =1;
+-- select sex ,count(*)as total from train  group by sex;
+-- select pclass , count(*) as total from train group by pclass;
+-- select avg(age) as average_age from train;
+-- select name, age from train where age= (select max(age)from train);
+-- select name , age from train where AGE= (Select min(age) from train);
+-- select avg(fare) as average_fare from train;
+-- select name , age,fare from train where fare >= 100 order by  fare desc;
+-- select sex, survived , count(*) from train group by sex,survived order by sex,survived;
+-- select sex , count(*)as total_passengers,sum(survived)as survivors, round(sum(survived)*100/count(*), 2)as survival_rate from train group by sex;
+-- select sex,round(avg(age), 2) as average_age from train group by sex;
+-- select * from train where age is null;
+-- select count(*) as missing_age from train where age is null;
+-- select * from train where sibsp=0 and parch = 0;
+-- select name ,sibsp, parch,(sibsp+parch) as family_members from train where (sibsp+parch)>0;
+-- select round(avg(survived)*100,2)as overall_survival_rate from train;
+-- select sex, round(avg(survived)*100,2)as survival_rate from train group by sex order by survival_rate desc;
+select name, pclass , fare from train  order by fare desc limit 10;
